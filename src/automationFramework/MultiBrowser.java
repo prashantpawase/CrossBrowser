@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 
 import org.testng.annotations.BeforeClass;
@@ -29,21 +30,21 @@ public class MultiBrowser {
 
     @BeforeClass
 
-    // Passing Browser parameter from TestNG xml
+
 
     public void beforeTest(String browser) {
 
-        // If the browser is Firefox, then do this
+
 
         if(browser.equalsIgnoreCase("firefox")) {
 
             driver = new FirefoxDriver();
 
-            // If browser is IE, then do this
+
 
         }else if (browser.equalsIgnoreCase("chrome")) {
 
-            // Here I am setting up the path for my IEDriver
+
 
             System.setProperty("webdriver.chrome.driver", "/home/prashant/prashant/chromedriver");
 
@@ -51,13 +52,13 @@ public class MultiBrowser {
 
         }
 
-        // Doesn't the browser type, launch the Website
+
 
         driver.get("http://www.edunuts.com/login");
 
     }
 
-    // Once Before method is completed, Test method will start
+
 
     @Test public void login() throws InterruptedException {
 
